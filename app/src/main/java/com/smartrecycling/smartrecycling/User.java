@@ -1,4 +1,6 @@
 package com.smartrecycling.smartrecycling;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
@@ -7,20 +9,26 @@ import java.util.ArrayList;
  */
 
 public class User {
-    public String username;
+    public String name;
     public String email;
     //cai may la private
-    public String phone;
-    public String id;
+    public String avatarLink;
+    public int id;
     public User() {
         // Default constructor required for calls to DataSnapshot.getValue(User.class)
     }
 
-    public User(String id, String username, String email, String phone) {
+    public User(int id, String name, String email, String avatarLink) {
         this.id = id;
-        this.username = username;
+        this.name = name;
         this.email = email;
-        this.phone = phone;
+        this.avatarLink=avatarLink;
     }
 
+    public void writeNew(String name, String email, String avatarLink, DatabaseReference mDatabase, SSystem mySys) {
+
+        User user = new User(mySys.UserCount, name, email, avatarLink);
+        mDatabase.child("User").child(mySys.UserCount + "").setValue(user);
+        mySys.UserCount++;
+    }
 }
