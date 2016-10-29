@@ -10,9 +10,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.fasterxml.jackson.databind.ser.std.StdJdkSerializers;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 
+import com.firebase.client.Query;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -23,6 +25,12 @@ import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
 
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 public class MainActivity extends AppCompatActivity {
     private TextView infor;
     private DatabaseReference mDatabase;
@@ -32,7 +40,8 @@ public class MainActivity extends AppCompatActivity {
     private Button addData;
     private Button showData;
     private Firebase ref;
-
+    private String a;
+    private int count;
 
 
 
@@ -40,10 +49,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        count = 0;
+        a = "key";
 
         Firebase.setAndroidContext(this);
         ref = new Firebase("https://smartrecycling-147902.firebaseio.com/");
 
+        //Create tree index
         //Phan nay chi la DEMO, tat ca de Chuong lo
         addData = (Button) findViewById(R.id.add);
         showData = (Button) findViewById(R.id.retrieve);
@@ -55,9 +67,27 @@ public class MainActivity extends AppCompatActivity {
     }
     ;
 
-    private void writeNewUser(String userId, String name, String email, String phone) {
-        User user = new User(userId, name, email, phone);
-        mDatabase.child("Users").child(userId).setValue(user);
+    private void writeNewUser(int type, String field1, String field2, String field3, String field4) {
+        if (type == 0)
+        {
+            User user = new User(field1, field2, field3, field4);
+            mDatabase.child("Users").child(field1).setValue(user);
+        } else if (type == 1)
+        {
+            //Field1: ID products
+            //Field2: meterial products
+            //Field3: name products
+            //Field4: content products
+            Products product = new Products(field1, field2, field3, field4);
+
+            //Add index in Search Tree
+            count++;
+            //mDatabase.child("Products").child(field1).setValue(product);
+            mDatabase.child("Products").setValue(product);
+            mDatabase.child("Search").child("material").child(field2).child(a + count + "").setValue(field1);
+            mDatabase.child("")
+        }
+
     }
     //Add new user
     void onAddData(View view) {
@@ -66,7 +96,19 @@ public class MainActivity extends AppCompatActivity {
         username = ((EditText) findViewById(R.id.editText2)).getText().toString();
         email = ((EditText) findViewById(R.id.editText3)).getText().toString();
 
-        writeNewUser(userID, username, email, "0");
+        writeNewUser(0, userID, username, email, "0");
+
+
+    }
+
+
+    //Add new products
+    void onAddProduct(View view)
+    {
+        writeNewUser(1, "1", "material1", "name1", "content1");
+        writeNewUser(1, "2", "material1", "name2", "content2");
+        writeNewUser(1, "3", "material3", "name3", "content3");
+        writeNewUser(1, "4", "material4", "name4", "content4");
     }
 
     //Get data from firebase --     BUILDING ----
@@ -95,6 +137,30 @@ public class MainActivity extends AppCompatActivity {
                 {
                     Toast.makeText(getApplicationContext(), "ahihi", Toast.LENGTH_SHORT).show();
                 }
+            }
+
+            public void onCancelled(FirebaseError firebaseError) {
+            }
+        });
+    }
+
+    void onRetrieveProducts(View view)
+    {
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                HashMap<String, String> a = (HashMap<String, String>)dataSnapshot.child("Search").child("material").child("material1").getValue();
+
+                Set set = a.entrySet();
+                Iterator i = set.iterator();
+                while (i.hasNext())
+                {
+                    Map.Entry me = (Map.Entry)i.next();
+                    Toast.makeText(getApplicationContext(), me.getValue().toString(), Toast.LENGTH_SHORT).show();
+                }
+
+
             }
 
             public void onCancelled(FirebaseError firebaseError) {

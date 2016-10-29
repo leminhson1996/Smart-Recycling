@@ -5,6 +5,7 @@ package com.smartrecycling.smartrecycling;
  */
 
 public class Products {
+    public String id;
     public String material;
     public String name;
     public String content;
@@ -15,10 +16,11 @@ public class Products {
     }
 
 
-    public Products(String material, String name, String content)
+    public Products(String id, String material, String name, String content)
     {
         this.material = material;
         this.name = name;
         this.content = content;
+        this.id = id;
     }
 }

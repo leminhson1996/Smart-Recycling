@@ -77,4 +77,26 @@
         android:layout_toRightOf="@+id/editText3"
         android:layout_toEndOf="@+id/editText3" />
 
+    <Button
+        android:text="Add product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:id="@+id/addProduct"
+        android:onClick="onAddProduct"
+        android:layout_below="@+id/add"
+        android:layout_alignLeft="@+id/add"
+        android:layout_alignStart="@+id/add" />
+
+    <Button
+        android:text="Retrieve pro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/addProduct"
+        android:layout_alignRight="@+id/retrieve"
+        android:layout_alignEnd="@+id/retrieve"
+        android:id="@+id/retrieveProducts"
+        android:onClick="onRetrieveProducts"/>
+
+
 </RelativeLayout>
