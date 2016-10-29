@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "smartrecycling-147902",
+  "private_key_id": "c47222a8c46dd3d6ee44c821430474af21547e61",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC6C0xwEuCxaA5v\nkgFYn+zm8XodMF70vBgnzpTz4LOggIkpbnAGE8vJ5Rj8MgTqpBsEcEjuhS/Lva45\ne4N9KsSp5XuStSahs8/rsSrVwEUbsDcm/aAJcfNqDpGkjXznrhEpyFS3/V7mOhYt\nNEtB1mzgSjw08+1nai7M9HndtE9XgjQowSZL13DKbstjpws16NIHrIjK2ieLvx2M\nzZjAaRfARQ9WatDjsCbWKLosulHSdMKG1YTXkFwr6eU4mzduzzfgHIBrysOKN8xq\npaqZu4bbrejS146ZhcSGzNknmPxbqwttTm/K0VzzO1xlURjM11GD51TKtKuawFfp\nzpAQjeoBAgMBAAECggEAZtk0KojlGm4R/O/UOrA+gPVhsp05AUaye98iTSgdZU9p\nhDP/TfzHnhc+lrz4JtcN8Ig6aVHLuHBlznVPnXR1QA8TH2lxr9b9zKgmrAActE/Y\nTX/MZyxNioX/Ud69/D4oUtbirswtGE1oURkluYHWsq+XVRa8WX1D3h4Q+NVjP1ZS\nrx7Ixx/CTKy2YtsVl7s7XxJwZvtfdb4MVe3T44vYxqrd1PJSJWY8ax8/cKYq2vJv\nIov8M9dTdvgK40JQRaNRV7DND9B3Tr7NG9CSFg58VZMd1dFc5h4P8xhquSZWX9JI\n9+YN1qpAlvMbLe9NUKJRS+ALPZGbuVPXOPjJT2PjmQKBgQD0kB1F+HbPlYRJYnV6\nE0vK1qCj1Oa+EdcETa/Bea2m+ebwIwXEX+Tguen9FV0f0lz2m5Z+n6fNhH3Sz8nW\n073COYts3MkSaGUijSC7RJ702nDQaAfBNQR6ZM5D6S0w+ctY1dBqGrXs8LSQzIbE\nwmSkkzeR9Q0Yj/q3ItKNyS329wKBgQDCvpout1fNI8uNKGY7xcZezrQjhuO48kH2\niebP/RexB3Y91xHYsesAWHMQsk8xrnxt8uI27rG3UtiT8pwhrTPOsFhRNj9MmmVT\nZtsOPA04ZNDvCEaBaKrLau1CLevunLNNuxj3c7Tmx8EEmQNXgOsmmcQEtM5UQuvW\nPy0sAliQxwKBgDnd+785qks18qY2kNuAw1dMb5g0YSCqMflHtIWQGAHBcd5yOwQb\nOJngA7ipnG5SJUMIz5RIjLj5V5hRKE4XrffOC+qHV2BuqTeCszL8aqw/H6CAbQ1P\nUS7wuUmiW9oR0QbFGNpyVYep8N+uNVlLMesrFmQH2sBsGQPKTo3UA3dDAoGBAKtk\nMDHZLi7ex/BNk9wbLYCXDrcNqjFFFISzzS1To5wr4wZ917kMrLQ7I9mX9FbXJ69k\nSW7rGAEtqmpa5MpGswe+75tZ0M/MOkzyguu+MixlnfQhJlwSD+7DBlhuLexsgOly\nNoDhll5dgyRWvjguv8XTIk66CbTiyMhgBZNr5SJVAoGBAM8dRl2gLCuG0Ehq6cVr\njp9cgnCqehlX0QPf9FSjOJC1s2PA2bUOuoDadL8fRV4rRAQ3UxlmxDLqSzGY+1yQ\nyn/vCczIS+te6vAalYIbAFava0jLfG/gowo/GSBmW8PH6IGLjqzTJhUJxVYYs2NT\nJPpS3fhyYjyllN8lvkrJFFkK\n-----END PRIVATE KEY-----\n",
+  "client_email": "id-todo-servlet@smartrecycling-147902.iam.gserviceaccount.com",
+  "client_id": "108885491541815742200",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/id-todo-servlet%40smartrecycling-147902.iam.gserviceaccount.com"
+}
