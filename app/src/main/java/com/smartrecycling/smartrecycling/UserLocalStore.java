@@ -10,7 +10,7 @@ import android.content.SharedPreferences;
 public class UserLocalStore {
     public static final String SP_NAME = "userDetails";         //Tên của Share Preferences
     SharedPreferences userLocalDatabase;
-/*
+
     public UserLocalStore(Context context){
         userLocalDatabase = context.getSharedPreferences(SP_NAME, 0);
     }
@@ -18,9 +18,9 @@ public class UserLocalStore {
     //Lưu user vô bộ nhớ
     public void storeUserData(User user){
         SharedPreferences.Editor spEditor = userLocalDatabase.edit();
-        spEditor.putString("name", user.m_name);
-        spEditor.putString("avatar",user.m_avatar);
-        spEditor.putString("email", user.m_email);
+        spEditor.putString("name", user.name);
+        spEditor.putString("avatar",user.avatarLink);
+        spEditor.putString("email", user.email);
         spEditor.commit();
     }
 
@@ -30,7 +30,7 @@ public class UserLocalStore {
         String avatar = userLocalDatabase.getString("avatar","");
         String email = userLocalDatabase.getString("email","");
 
-        User storedUser = new User(name, avatar, email);
+        User storedUser = new User("",name,email,avatar);
         return storedUser;
     }
 
@@ -57,5 +57,5 @@ public class UserLocalStore {
         SharedPreferences.Editor spEditor = userLocalDatabase.edit();
         spEditor.clear();
         spEditor.commit();
-    }*/
+    }
 }

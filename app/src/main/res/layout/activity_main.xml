@@ -1,102 +1,31 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.smartrecycling.smartrecycling.MainActivity">
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/tabhost"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:id="@+id/infor"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:padding="5dp">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:ems="10"
-        android:layout_marginTop="16dp"
-        android:id="@+id/editText"
-        android:layout_below="@+id/infor"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="15dp"
-        android:layout_marginStart="15dp" />
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_weight="1"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:layout_marginBottom="-4dp"/>
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:ems="10"
-        android:layout_below="@+id/editText"
-        android:layout_alignLeft="@+id/editText"
-        android:layout_alignStart="@+id/editText"
-        android:layout_marginTop="19dp"
-        android:id="@+id/editText2" />
+    </LinearLayout>
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:ems="10"
-        android:layout_below="@+id/editText2"
-        android:layout_alignLeft="@+id/editText2"
-        android:layout_alignStart="@+id/editText2"
-        android:layout_marginTop="18dp"
-        android:id="@+id/editText3" />
-
-    <Button
-        android:text="Add"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/add"
-        android:onClick="onAddData"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/editText3"
-        android:layout_alignStart="@+id/editText3"
-        android:layout_marginLeft="17dp"
-        android:layout_marginStart="17dp" />
-
-    <Button
-        android:text="Retrieve"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/retrieve"
-        android:onClick="onRetrieveData"
-        android:layout_alignBaseline="@+id/add"
-        android:layout_alignBottom="@+id/add"
-        android:layout_toRightOf="@+id/editText3"
-        android:layout_toEndOf="@+id/editText3" />
-
-    <Button
-        android:text="Add product"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:id="@+id/addProduct"
-        android:onClick="onAddProduct"
-        android:layout_below="@+id/add"
-        android:layout_alignLeft="@+id/add"
-        android:layout_alignStart="@+id/add" />
-
-    <Button
-        android:text="Retrieve pro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/addProduct"
-        android:layout_alignRight="@+id/retrieve"
-        android:layout_alignEnd="@+id/retrieve"
-        android:id="@+id/retrieveProducts"
-        android:onClick="onRetrieveProducts"/>
-
-
-</RelativeLayout>
+</TabHost>

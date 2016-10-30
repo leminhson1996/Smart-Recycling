@@ -13,22 +13,17 @@ public class User {
     public String email;
     //cai may la private
     public String avatarLink;
-    public int id;
+    public String id;
     public User() {
         // Default constructor required for calls to DataSnapshot.getValue(User.class)
     }
 
-    public User(int id, String name, String email, String avatarLink) {
+    public User(String id, String name, String email, String avatarLink) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.avatarLink=avatarLink;
     }
 
-    public void writeNew(String name, String email, String avatarLink, DatabaseReference mDatabase, SSystem mySys) {
 
-        User user = new User(mySys.UserCount, name, email, avatarLink);
-        mDatabase.child("User").child(mySys.UserCount + "").setValue(user);
-        mySys.UserCount++;
-    }
 }

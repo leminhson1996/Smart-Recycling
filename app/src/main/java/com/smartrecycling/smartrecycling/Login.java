@@ -1,6 +1,7 @@
 package com.smartrecycling.smartrecycling;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,6 +24,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Login extends AppCompatActivity {
     private static final int  RC_SIGN_IN = 1;
@@ -31,13 +34,14 @@ public class Login extends AppCompatActivity {
     private static final String TAG = "MAIN_ACTIVITY";
     private FirebaseAuth.AuthStateListener mAuthListener;
     ImageButton loginWithGoogle;
-
+    private DatabaseReference mDatabase;
+    private User user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         this.loginWithGoogle = (ImageButton)findViewById(R.id.googleButton);
-
+        mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener()
         {
@@ -98,6 +102,14 @@ public class Login extends AppCompatActivity {
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = result.getSignInAccount();
                 firebaseAuthWithGoogle(account);
+                String personName = account.getDisplayName();
+                String personEmail = account.getEmail();
+                Uri personPhoto = account.getPhotoUrl();
+                String personId = account.getId();
+                user= new User(personId, personName, personEmail, personPhoto.toString());
+                mDatabase.child("User").child(personId).setValue(user);
+                UserLocalStore userLocalStore = new UserLocalStore(getApplicationContext());
+                userLocalStore.storeUserData(new User("",personName,personEmail,personPhoto.toString()));
             } else {
                 // Google Sign In failed, update UI appropriately
                 // ...

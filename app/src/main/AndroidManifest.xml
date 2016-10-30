@@ -17,10 +17,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--
+
         <activity android:name=".AddProductActivity" />
-        <activity android:name=".RetrieveProductActivity"></activity>
-        -->
+       <!-- <activity android:name=".RetrieveProductActivity"></activity> -->
+
         <activity android:name=".AddUserActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Login" />
@@ -28,14 +28,16 @@
             android:name=".Home"
             android:label="@string/title_activity_home"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
+       <activity
             android:name=".search"
             android:label="@string/title_activity_search"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".profile"
             android:label="@string/title_activity_profile"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!-- <activity android:name=".test"></activity> -->
+
     </application>
 
 </manifest>
