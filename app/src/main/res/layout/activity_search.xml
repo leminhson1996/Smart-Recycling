@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="20dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.smartrecycling.smartrecycling.search">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Product name"
+        android:ems="10"
+        android:id="@+id/productnameedittext"/>
+
+    <EditText
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Material"
+        android:ems="10"
+        android:id="@+id/editTextMaterial"
+        android:layout_below="@id/productnameedittext"/>
+
+    <Button
+        android:text="Find"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonFind"
+        android:layout_below="@id/editTextMaterial"
+        android:layout_centerHorizontal="true"
+        android:onClick="onRetrieveList"/>
+
+    <ListView
+        android:id="@+id/lstproducts"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="#808080"
+        android:dividerHeight="1dp"
+        android:padding="5dp"
+        android:layout_below="@+id/buttonFind"
+        android:headerDividersEnabled="false">
+
+
+    </ListView>
+</RelativeLayout>

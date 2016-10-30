@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "611369673635",
+    "firebase_url": "https://smartrecycling-147902.firebaseio.com",
+    "project_id": "smartrecycling-147902",
+    "storage_bucket": "smartrecycling-147902.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:611369673635:android:d41a82d18281986d",
+        "android_client_info": {
+          "package_name": "com.smartrecycling.smartrecycling"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "611369673635-j3bh86e9mguodhdv7807uvi2unk87r7l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.smartrecycling.smartrecycling",
+            "certificate_hash": "E52CC900DDD338F0DD23BE27FAD711044F1B6489"
+          }
+        },
+        {
+          "client_id": "611369673635-7ij4mks9v509hhn3r1f59v0krlfau890.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_myjRywx31yt6xRadv5u1x6l2nXIp_Hw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "611369673635-7ij4mks9v509hhn3r1f59v0krlfau890.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
